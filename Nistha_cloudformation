@@ -1,0 +1,33 @@
+{
+    "Resources": {
+        "CWAV6IE": {
+            
+    "Type": "AWS::CloudWatch::Alarm",
+    "Properties": {
+        "AlarmName": "Test-Nistha1",
+        "ActionsEnabled": true,
+        "OKActions": [],
+        "AlarmActions": [
+            "arn:aws:sns:us-east-1:729617061641:Default_Nistha_Test"
+        ],
+        "InsufficientDataActions": [],
+        "MetricName": "TotalConsumerCount",
+        "Namespace": "AWS/AmazonMQ",
+        "Statistic": "Average",
+        "Dimensions": [
+            {
+                "Name": "Broker",
+                "Value": "CignaUiBroker-Broker1-1"
+            }
+        ],
+        "Period": 300,
+        "EvaluationPeriods": 1,
+        "DatapointsToAlarm": 1,
+        "Threshold": 10,
+        "ComparisonOperator": "GreaterThanThreshold",
+        "TreatMissingData": "missing"
+    }
+}
+        }
+    }
+
